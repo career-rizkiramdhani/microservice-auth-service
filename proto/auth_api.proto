@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package auth;
+
+import "auth_payload.proto";
+
+option go_package = "./protobuf";
+
+service AuthService {
+  rpc Health(HealthRequest) returns (HealthResponse);
+}
