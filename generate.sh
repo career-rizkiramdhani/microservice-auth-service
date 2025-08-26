@@ -1,9 +1,9 @@
 #!/bin/bash
-mkdir -p server/
+mkdir -p pkg/
 mkdir -p docs/
 echo "Generating Go code from proto files..."
-protoc --go_out=./server/ --go-grpc_out=./server/ --proto_path=proto --proto_path=proto/libs proto/*.proto
+protoc --go_out=./pkg/ --go-grpc_out=./pkg/ --proto_path=api/proto --proto_path=api/proto/libs api/proto/*.proto
 echo "Generating Swagger/OpenAPI documentation..."
-protoc --openapiv2_out=./docs/ --openapiv2_opt=logtostderr=true --proto_path=proto --proto_path=proto/libs proto/auth_api.proto
+protoc --openapiv2_out=./docs/ --openapiv2_opt=logtostderr=true --proto_path=api/proto --proto_path=api/proto/libs api/proto/auth_api.proto
 echo "Generation completed!"
 echo "Swagger JSON available at: ./docs/auth_api.swagger.json"
