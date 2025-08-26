@@ -6,7 +6,7 @@ import "auth_payload.proto";
 import "google/api/annotations.proto";
 import "protoc-gen-openapiv2/options/annotations.proto";
 
-option go_package = "server/protobuf;pb";
+option go_package = "./protobuf";
 
 // OpenAPI/Swagger configuration
 option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
